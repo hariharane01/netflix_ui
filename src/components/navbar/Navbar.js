@@ -1,8 +1,16 @@
 import { ArrowDropDown, Notifications, Search } from "@mui/icons-material";
 import "./navbar.scss";
+import { useState } from "react";
+
 export const Navbar = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+  window.onscroll = () => {
+    setIsScrolled(window.pageYOffset === 0 ? false : true);
+    return () => window.onscroll == null;
+  };
+  console.log(isScrolled);
   return (
-    <div className="navbar">
+    <div className={isScrolled ? "navbar scrolled " : "navbar"}>
       <div className="container">
         <div className="left">
           <img
@@ -27,7 +35,7 @@ export const Navbar = () => {
             <ArrowDropDown className="icons" />
             <div className="option">
               <span>Setting </span>
-              <span>Logout  </span>
+              <span>Logout </span>
             </div>
           </div>
         </div>
