@@ -1,4 +1,4 @@
-import  { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import "./listItem.scss";
 import {
   Add,
@@ -27,11 +27,12 @@ export default function ListItem({ index, item }) {
         console.log(err);
       }
     };
+
     getMovie();
-  }, [item]);
+  }, [item,setMovie]);
 
   return (
-    <Link to={{ pathname:"/watch", movie: movie  }}>
+    <Link to={{ pathname: "/watch", movie: movie }}>
       <div
         className="listItem"
         style={{ left: isHovered && index * 225 - 50 + index * 2.5 }}

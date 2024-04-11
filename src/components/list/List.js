@@ -5,6 +5,8 @@ import {
 import "./list.scss";
 import ListItem from "../listItem/ListItem";
 import { useRef, useState } from "react";
+
+
 export default function List({ list }) {
   const [isMoved, setIsMoved] = useState(false);
   const [slideNumber, setSlideNumber] = useState(0);
@@ -36,7 +38,7 @@ export default function List({ list }) {
         />
         <div className="container" ref={listRef}>
           {list.content.map((item, i) => (
-            <ListItem key={i} index={i} item={item} />
+            <ListItem  index={i} item={item} />
           ))}
         </div>
 

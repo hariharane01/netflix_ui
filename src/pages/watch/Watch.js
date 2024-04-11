@@ -4,6 +4,7 @@ import { Link, useLocation } from "react-router-dom";
 
 export default function Watch() {
   const location = useLocation();
+  console.log(location)
   const movie = location.movie;
   return (
     <div className="watch">
@@ -13,7 +14,7 @@ export default function Watch() {
           Home
         </div>
       </Link>
-      <video className="video " autoPlay Progress controls src={movie.video} />
+      <video className="video " autoPlay controls src="" />
     </div>
   );
 }
