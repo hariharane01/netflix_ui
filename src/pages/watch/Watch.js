@@ -2,10 +2,11 @@ import { ArrowBackOutlined } from "@mui/icons-material";
 import "./watch.scss";
 import { Link, useLocation } from "react-router-dom";
 
-export default function Watch() {
+export default function Watch( ) {
   const location = useLocation();
-  console.log(location)
-  const movie = location.movie;
+  console.log(location);
+  // const movie = location.movie;
+  // console.log(movie);
   return (
     <div className="watch">
       <Link to="/">

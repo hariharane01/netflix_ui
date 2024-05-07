@@ -8,6 +8,7 @@ import { useRef, useState } from "react";
 
 
 export default function List({ list }) {
+  
   const [isMoved, setIsMoved] = useState(false);
   const [slideNumber, setSlideNumber] = useState(0);
 
@@ -37,8 +38,8 @@ export default function List({ list }) {
           style={{ display: !isMoved && "none" }}
         />
         <div className="container" ref={listRef}>
-          {list.content.map((item, i) => (
-            <ListItem  index={i} item={item} />
+          {list.content.map((item, i, ) => (
+            <ListItem key={i}  index={i} item={item} />
           ))}
         </div>
 
